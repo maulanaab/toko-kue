@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetDelights Artisan Bakery - Kelezatan Autentik Setiap Gigitan</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakery: {
+                            50: '#FDFBF7',
+                            100: '#F7F1E5',
+                            200: '#EADBC8',
+                            300: '#DAC0A3',
+                            500: '#C8A17D',
+                            800: '#4A3228',
+                            900: '#2C1B14',
+                            accent: '#D4A373',
+                            gold: '#E6C387'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            color: #2C1B14;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(234, 219, 200, 0.6);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-bakery-200 selection:text-bakery-900">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card transition-all duration-300 id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-bakery-800 flex items-center justify-center text-bakery-100 font-serif text-xl font-bold group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-cookie-bite text-bakery-gold"></i>
+                    </div>
+                    <span class="font-serif-title text-2xl font-bold tracking-wide text-bakery-900">Sweet<span class="text-bakery-accent">Delights</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-bakery-800">
+                    <a href="#beranda" class="hover:text-bakery-accent transition-colors">Beranda</a>
+                    <a href="#keunggulan" class="hover:text-bakery-accent transition-colors">Mengapa Kami</a>
+                    <a href="#katalog" class="hover:text-bakery-accent transition-colors">Katalog Kue</a>
+                    <a href="#custom-order" class="hover:text-bakery-accent transition-colors">Kalkulator Custom</a>
+                    <a href="#testimoni" class="hover:text-bakery-accent transition-colors">Ulasan</a>
+                    <a href="#kontak" class="hover:text-bakery-accent transition-colors">Lokasi & FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/6281234567890?text=Halo%20SweetDelights,%20saya%20ingin%20bertanya%20mengenai%20produk%20kue" target="_blank" class="bg-bakery-800 hover:bg-bakery-900 text-white px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm font-semibold">
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                        <span>Pesan via WA</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-bakery-800 hover:text-bakery-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-bakery-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Beranda</a>
+            <a href="#keunggulan" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Mengapa Kami</a>
+            <a href="#katalog" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Katalog Kue</a>
+            <a href="#custom-order" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Kalkulator Custom</a>
+            <a href="#testimoni" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Ulasan</a>
+            <a href="#kontak" class="block py-2 text-bakery-800 font-medium hover:text-bakery-accent">Lokasi & FAQ</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="w-full bg-bakery-800 text-white text-center py-3 rounded-xl flex items-center justify-center gap-2 font-semibold">
+                <i class="fa-brands fa-whatsapp text-emerald-400"></i> Hubungi Kami
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bakery-100 border border-bakery-200 text-bakery-800 text-sm font-semibold">
+                        <i class="fa-solid fa-award text-bakery-accent"></i>
+                        <span>Toko Kue Artisan Terpercaya Sejak 2018</span>
+                    </div>
+                    
+                    <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-bakery-900 leading-tight">
+                        Kelezatan Autentik <br class="hidden sm:block">
+                        <span class="text-bakery-accent italic">Setiap Gigitan</span> Dibuat Penuh Cinta.
+                    </h1>
+                    
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Menghadirkan aneka kue ulang tahun, pastry renyah, dan kue tradisional berkelas tinggi dengan bahan impor premium, 100% Halal, dan dipanggang segar setiap hari.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#katalog" class="w-full sm:w-auto bg-bakery-800 hover:bg-bakery-900 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all font-semibold text-center flex items-center justify-center gap-3">
+                            <span>Jelajahi Katalog</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#custom-order" class="w-full sm:w-auto bg-white border-2 border-bakery-300 hover:border-bakery-800 text-bakery-800 px-8 py-4 rounded-xl transition-all font-semibold text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-bakery-accent"></i>
+                            <span>Estimasi Harga Custom</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-bakery-200 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-serif-title text-2xl font-bold text-bakery-900">10.000+</p>
+                            <p class="text-xs text-gray-500 font-medium">Kue Terjual</p>
+                        </div>
+                        <div>
+                            <p class="font-serif-title text-2xl font-bold text-bakery-900">4.9 / 5.0</p>
+                            <p class="text-xs text-gray-500 font-medium">Rating Pelanggan</p>
+                        </div>
+                        <div>
+                            <p class="font-serif-title text-2xl font-bold text-bakery-900">100%</p>
+                            <p class="text-xs text-gray-500 font-medium">Halal & Higienis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Hero Image -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                        <!-- Decorative background element -->
+                        <div class="absolute -top-6 -left-6 w-72 h-72 bg-bakery-200 rounded-full blur-3xl opacity-60 -z-10"></div>
+                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-bakery-gold rounded-full blur-3xl opacity-40 -z-10"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Signature Birthday Cake SweetDelights" 
+                                 class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl flex items-center gap-4">
+                                <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white text-xl flex-shrink-0">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-bakery-900 text-sm">Best Seller Week!</h4>
+                                    <p class="text-xs text-gray-600">Belgian Chocolate Fudge Cake</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST FACTORS / WHY CHOOSE US -->
+    <section id="keunggulan" class="py-16 bg-bakery-100/50 border-y border-bakery-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="font-serif-title text-3xl font-bold text-bakery-900">Mengapa Pelanggan Setia Pada Kami?</h2>
+                <p class="text-gray-600 mt-2 text-sm">Komitmen kami untuk memberikan standar cita rasa & kualitas terbaik untuk momen spesial Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-bakery-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 flex items-center justify-center text-bakery-800 text-xl mb-4">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="font-bold text-bakery-900 mb-2">Bahan Import Premium</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Menggunakan mentega Wijsman impor, cokelat Belgia murni, dan tanpa pengawet buatan.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-bakery-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 flex items-center justify-center text-bakery-800 text-xl mb-4">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="font-bold text-bakery-900 mb-2">100% Halal Certified</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Proses pengerjaan yang bersih, higienis, dan terjamin kehalalannya untuk seluruh keluarga.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-bakery-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 flex items-center justify-center text-bakery-800 text-xl mb-4">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="font-bold text-bakery-900 mb-2">Fresh Daily Baked</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Kue dipanggang setiap pagi berdasarkan pesanan untuk memastikan kesegaran tekstur & rasa.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-bakery-200 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 flex items-center justify-center text-bakery-800 text-xl mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-bold text-bakery-900 mb-2">Bebas Custom Desain</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Tim dekorator berpengalaman kami siap mewujudkan tema kue ulang tahun sesuai imajinasi Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section id="katalog" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-bakery-accent uppercase tracking-wider text-xs font-bold">Koleksi Pilihan</span>
+                    <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-bakery-900 mt-1">Katalog Produk Terfavorit</h2>
+                </div>
+                <p class="text-gray-600 text-sm max-w-md mt-2 md:mt-0">
+                    Pilih kreasi manis favorit Anda. Klik tombol detail untuk varian rasa atau langsung pesan via WhatsApp.
+                </p>
+            </div>
+
+            <!-- Filter Category Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none" id="category-tabs">
+                <button onclick="filterCatalog('all')" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-bakery-800 text-white shadow-md transition-all" data-cat="all">
+                    Semua Produk
+                </button>
+                <button onclick="filterCatalog('birthday')" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-bakery-800 border border-bakery-200 hover:bg-bakery-100 transition-all" data-cat="birthday">
+                    🎂 Kue Ulang Tahun
+                </button>
+                <button onclick="filterCatalog('pastry')" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-bakery-800 border border-bakery-200 hover:bg-bakery-100 transition-all" data-cat="pastry">
+                    🥐 Pastry & Bakery
+                </button>
+                <button onclick="filterCatalog('traditional')" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-bakery-800 border border-bakery-200 hover:bg-bakery-100 transition-all" data-cat="traditional">
+                    🍡 Kue Basah Traditional
+                </button>
+                <button onclick="filterCatalog('bestseller')" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-bakery-800 border border-bakery-200 hover:bg-bakery-100 transition-all" data-cat="bestseller">
+                    ⭐ Best Seller
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="product-grid">
+                <!-- Products will be injected by JS dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM ORDER CALCULATOR / REQUEST FORM -->
+    <section id="custom-order" class="py-20 bg-bakery-900 text-white relative overflow-hidden">
+        <!-- Decorative bg circle -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-bakery-800 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left text -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-bakery-gold font-semibold text-sm tracking-wider uppercase">Custom Cake Simulator</span>
+                    <h2 class="font-serif-title text-3xl md:text-4xl font-bold leading-tight">
+                        Hitung Estimasi Harga Kue Impian Anda
+                    </h2>
+                    <p class="text-bakery-200 text-sm leading-relaxed">
+                        Punya ide desain kue khusus untuk acara ulang tahun, pernikahan, atau gathering? Gunakan kalkulator interaktif kami untuk mendapatkan perkiraan harga secara transparan.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 mt-1"></i>
+                            <p class="text-xs text-bakery-100">Bisa kirim sampel gambar referensi via WhatsApp.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 mt-1"></i>
+                            <p class="text-xs text-bakery-100">Pilihan varian rasa cake dasar yang melimpah.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-emerald-400 mt-1"></i>
+                            <p class="text-xs text-bakery-100">Pengiriman aman menggunakan kurir khusus cake.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Widget -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white text-bakery-900 p-6 sm:p-8 rounded-3xl shadow-2xl">
+                        <h3 class="font-serif-title text-xl font-bold mb-6 text-bakery-900 border-b border-bakery-100 pb-3">
+                            Kalkulator Estimasi Custom Cake
+                        </h3>
+
+                        <form id="calculator-form" class="space-y-4" onsubmit="event.preventDefault(); sendCustomOrder();">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Size -->
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Ukuran Diameter</label>
+                                    <select id="calc-size" class="w-full bg-bakery-50 border border-bakery-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bakery-800" onchange="calculatePrice()">
+                                        <option value="150000" data-label="16 cm (6-8 Porsi)">16 cm (6-8 Porsi) - Rp 150.000</option>
+                                        <option value="250000" data-label="20 cm (10-14 Porsi)" selected>20 cm (10-14 Porsi) - Rp 250.000</option>
+                                        <option value="380000" data-label="24 cm (16-20 Porsi)">24 cm (16-20 Porsi) - Rp 380.000</option>
+                                        <option value="550000" data-label="2 Tier (20cm + 15cm)">2 Tier (Bertingkat) - Rp 550.000</option>
+                                    </select>
+                                </div>
+
+                                <!-- Flavor -->
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Rasa Base Cake</label>
+                                    <select id="calc-flavor" class="w-full bg-bakery-50 border border-bakery-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bakery-800" onchange="calculatePrice()">
+                                        <option value="0" data-label="Classic Vanilla Sponge">Classic Vanilla Sponge (+Rp 0)</option>
+                                        <option value="25000" data-label="Belgian Chocolate Ganache">Belgian Chocolate (+Rp 25.000)</option>
+                                        <option value="30000" data-label="Red Velvet Cream Cheese">Red Velvet Cheese (+Rp 30.000)</option>
+                                        <option value="35000" data-label="Matcha Espresso Layer">Matcha Espresso (+Rp 35.000)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Decoration Level -->
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tingkat Kesulitan Dekorasi</label>
+                                    <select id="calc-decor" class="w-full bg-bakery-50 border border-bakery-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bakery-800" onchange="calculatePrice()">
+                                        <option value="0" data-label="Simple Modern Buttercream">Simple Buttercream (+Rp 0)</option>
+                                        <option value="50000" data-label="Korean Minimalist / Floral">Korean Minimalist (+Rp 50.000)</option>
+                                        <option value="100000" data-label="Fondant Figurine 3D">Fondant Character 3D (+Rp 100.000)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Delivery Date -->
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tanggal Acara</label>
+                                    <input type="date" id="calc-date" class="w-full bg-bakery-50 border border-bakery-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bakery-800" required>
+                                </div>
+                            </div>
+
+                            <!-- Additional Notes -->
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tulisan di Kue / Catatan Khusus</label>
+                                <textarea id="calc-notes" rows="2" placeholder="Contoh: Happy Birthday Aurel ke-17! Warna dominan pastel pink." class="w-full bg-bakery-50 border border-bakery-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-bakery-800"></textarea>
+                            </div>
+
+                            <!-- Estimated Total Price Card -->
+                            <div class="bg-bakery-100 p-4 rounded-2xl flex items-center justify-between mt-4">
+                                <div>
+                                    <span class="text-xs text-gray-500 uppercase font-semibold">Estimasi Total Harga:</span>
+                                    <p id="total-price-display" class="font-serif-title text-2xl font-bold text-bakery-900">Rp 275.000</p>
+                                </div>
+                                <span class="text-[10px] text-gray-500 bg-white px-2 py-1 rounded border border-bakery-200">Belum termasuk ongkir</span>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Konsultasikan via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimoni" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-bakery-accent uppercase tracking-wider text-xs font-bold">Kata Mereka</span>
+                <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-bakery-900 mt-1">Ulasan Jujur Pelanggan</h2>
+                <p class="text-gray-600 text-sm mt-2">Kepuasan rasa dan pelayanan manis adalah prioritas utama SweetDelights.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-bakery-200 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                        "Pesan Belgian Chocolate Fudge untuk ultah anak. Rasanya bener-bener nyoklat banget tapi ga bikin eneg. Tamu-tamu pada nanyain belinya di mana!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-bakery-900">Clarissa Amanda</h4>
+                            <p class="text-xs text-gray-500">Verified Customer - Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-bakery-200 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                        "Croissant-nya sangat flaky dan wanginya harum butter asli. Pengiriman juga rapi paka box eksklusif. Recommended banget buat hampers pernikahan."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-bakery-900">Rian Prasetya</h4>
+                            <p class="text-xs text-gray-500">Food Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-bakery-200 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                        "Kalkulator custom harganya sangat akurat! Ngebantu banget pas diskusi sama admin via WA. Kue Korean minimalist-nya persis kayak contoh foto."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Customer" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-bakery-900">Nadia Maharani</h4>
+                            <p class="text-xs text-gray-500">Verified Customer - Tangerang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION, CONTACT & FAQ -->
+    <section id="kontak" class="py-20 bg-bakery-100/60 border-t border-bakery-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left: Outlet info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-bakery-accent uppercase tracking-wider text-xs font-bold">Kunjungi Outlet</span>
+                        <h2 class="font-serif-title text-3xl font-bold text-bakery-900 mt-1">Lokasi & Jam Operasional</h2>
+                    </div>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Nikmati kelezatan aroma wangi kue yang baru matang langsung dari dapur utama kami.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-200 flex items-center justify-center text-bakery-800 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Alamat Galeri Utama</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Jl. Senopati No. 42, Kebayoran Baru, Jakarta Selatan, 12190</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-200 flex items-center justify-center text-bakery-800 flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Jam Buka Dapur</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Senin - Minggu: 07.00 - 21.00 WIB</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-200 flex items-center justify-center text-bakery-800 flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Layanan Pesanan Direct</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">+62 812-3456-7890 (WhatsApp Direct)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social links -->
+                    <div class="pt-4 flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-bakery-200 flex items-center justify-center text-bakery-800 hover:bg-bakery-800 hover:text-white transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-bakery-200 flex items-center justify-center text-bakery-800 hover:bg-bakery-800 hover:text-white transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-bakery-200 flex items-center justify-center text-bakery-800 hover:bg-bakery-800 hover:text-white transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: FAQ Accordion -->
+                <div class="lg:col-span-7">
+                    <h3 class="font-serif-title text-2xl font-bold text-bakery-900 mb-6">Pertanyaan Sering Diajukan (FAQ)</h3>
+                    
+                    <div class="space-y-4" id="faq-accordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-white rounded-2xl border border-bakery-200 overflow-hidden">
+                            <button onclick="toggleFaq(1)" class="w-full text-left p-5 flex items-center justify-between font-bold text-bakery-900 text-sm focus:outline-none">
+                                <span>Berapa hari sebelumnya saya harus memesan Custom Cake?</span>
+                                <i id="faq-icon-1" class="fa-solid fa-chevron-down text-bakery-accent transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-1" class="hidden px-5 pb-5 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                                Untuk kue ulang tahun custom dengan tingkat kesulitan tinggi, pemesanan disarankan minimal H-3 sebelum tanggal pengiriman. Namun untuk katalog kue siap saji (ready stock) bisa dipesan H-1 atau pengiriman di hari yang sama jika kuota tersedia.
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-white rounded-2xl border border-bakery-200 overflow-hidden">
+                            <button onclick="toggleFaq(2)" class="w-full text-left p-5 flex items-center justify-between font-bold text-bakery-900 text-sm focus:outline-none">
+                                <span>Bagaimana dengan keamanan pengiriman kue?</span>
+                                <i id="faq-icon-2" class="fa-solid fa-chevron-down text-bakery-accent transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-2" class="hidden px-5 pb-5 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                                Kami bekerjasama dengan armada kurir mobil khusus pengiriman kue yang dilengkapi pendingin. Setiap kue dikemas rapat menggunakan papan penopang tebal dan *box sturdy lock* untuk menjaga bentuk kue tetap aman sampai ke rumah Anda.
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-white rounded-2xl border border-bakery-200 overflow-hidden">
+                            <button onclick="toggleFaq(3)" class="w-full text-left p-5 flex items-center justify-between font-bold text-bakery-900 text-sm focus:outline-none">
+                                <span>Apakah SweetDelights melayani permintaan Less Sugar?</span>
+                                <i id="faq-icon-3" class="fa-solid fa-chevron-down text-bakery-accent transition-transform"></i>
+                            </button>
+                            <div id="faq-ans-3" class="hidden px-5 pb-5 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                                Ya! Kami memiliki varian *Low-Sugar* dan *Gluten-Free Option* khusus untuk kue custom. Anda dapat menginformasikan kebutuhan alergi atau preferensi diet saat berdiskusi via WhatsApp.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-bakery-900 text-bakery-200 py-12 border-t border-bakery-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="font-serif-title text-2xl font-bold text-white tracking-wide">Sweet<span class="text-bakery-accent">Delights</span></span>
+                <p class="text-xs text-gray-400 mt-1">© 2026 SweetDelights Artisan Bakery. Hak Cipta Dilindungi.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-gray-400">
+                <a href="#beranda" class="hover:text-white transition-colors">Beranda</a>
+                <a href="#katalog" class="hover:text-white transition-colors">Katalog</a>
+                <a href="#custom-order" class="hover:text-white transition-colors">Custom Order</a>
+                <a href="#kontak" class="hover:text-white transition-colors">Lokasi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl transition-all transform scale-95 opacity-0 duration-300" id="modal-container">
+            <div class="relative">
+                <img id="modal-img" src="" alt="Detail Product" class="w-full h-64 object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 bg-white/80 hover:bg-white text-bakery-900 rounded-full flex items-center justify-center shadow-md focus:outline-none">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                    <span id="modal-category" class="text-[10px] font-bold uppercase tracking-wider bg-bakery-100 text-bakery-800 px-3 py-1 rounded-full">Kategori</span>
+                    <div class="flex items-center text-amber-400 text-xs font-bold gap-1">
+                        <i class="fa-solid fa-star"></i>
+                        <span id="modal-rating" class="text-gray-700">4.9</span>
+                    </div>
+                </div>
+
+                <h3 id="modal-title" class="font-serif-title text-2xl font-bold text-bakery-900">Nama Produk</h3>
+                <p id="modal-desc" class="text-xs text-gray-600 leading-relaxed">Deskripsi produk kue...</p>
+
+                <div class="pt-2 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] text-gray-400 uppercase font-semibold">Harga Mulai</span>
+                        <p id="modal-price" class="font-serif-title text-xl font-bold text-bakery-900">Rp 0</p>
+                    </div>
+                    <a id="modal-wa-btn" href="#" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pesan Kue Ini</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Sample Products Data
+        const products = [
+            {
+                id: 1,
+                name: "Belgian Chocolate Fudge",
+                category: "birthday",
+                isBestseller: true,
+                price: "Rp 265.000",
+                rawPrice: 265000,
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80",
+                desc: "Sponge cake cokelat super moist berlapis ganache cokelat Belgia murni 70%. Cita rasa pahit-manis yang mewah dan meleleh di mulut."
+            },
+            {
+                id: 2,
+                name: "Korean Minimalist Aesthetic",
+                category: "birthday",
+                isBestseller: true,
+                price: "Rp 210.000",
+                rawPrice: 210000,
+                rating: "4.8",
+                img: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=600&q=80",
+                desc: "Desain simpel nan elegan ala kafe Korea. Dilengkapi adonan vanila lembut dengan isian selai stroberi buatan sendiri."
+            },
+            {
+                id: 3,
+                name: "Butter Croissant Box (Isi 6)",
+                category: "pastry",
+                isBestseller: true,
+                price: "Rp 120.000",
+                rawPrice: 120000,
+                rating: "5.0",
+                img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80",
+                desc: "Croissant ala Perancis asli bertekstur sangat renyah di luar dan lembut berongga di dalam, menguapkan aroma mentega Wijsman yang wangi."
+            },
+            {
+                id: 4,
+                name: "Red Velvet Cream Cheese",
+                category: "birthday",
+                isBestseller: false,
+                price: "Rp 280.000",
+                rawPrice: 280000,
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80",
+                desc: "Warna merah merona alami berpadu lembut dengan frosting cream cheese gurih nan asam segar. Klasik dan selalu disukai."
+            },
+            {
+                id: 5,
+                name: "Lapis Legit Wisman Mini",
+                category: "traditional",
+                isBestseller: true,
+                price: "Rp 185.000",
+                rawPrice: 185000,
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80",
+                desc: "Kue lapis tradisional berlapis-lapis dipanggang sabar. Lembut, gurih mentega premium, dan kaya akan rempah berkualitas."
+            },
+            {
+                id: 6,
+                name: "Pain Au Chocolat Package",
+                category: "pastry",
+                isBestseller: false,
+                price: "Rp 135.000",
+                rawPrice: 135000,
+                rating: "4.8",
+                img: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=600&q=80",
+                desc: "Pastry renyah berlapis dengan isian cokelat batang leleh di bagian tengahnya. Cocok dinikmati bersama kopi hangat pagi hari."
+            },
+            {
+                id: 7,
+                name: "Klepon Modern Tart",
+                category: "traditional",
+                isBestseller: false,
+                price: "Rp 195.000",
+                rawPrice: 195000,
+                rating: "4.7",
+                img: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=600&q=80",
+                desc: "Inovasi rasa lokal. Base cake pandan wangi dengan lapisan gula aren leleh dan parutan kelapa kering yang gurih."
+            },
+            {
+                id: 8,
+                name: "Fruit Shortcake Strawberry",
+                category: "birthday",
+                isBestseller: true,
+                price: "Rp 240.000",
+                rawPrice: 240000,
+                rating: "4.9",
+                img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80",
+                desc: "Kue sifon Jepang super ringan dengan whipped cream lembut dan potongan buah stroberi segar melimpah."
+            }
+        ];
+
+        // Render Catalog Grid
+        function renderCatalog(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            items.forEach(product => {
+                const waMessage = encodeURIComponent(`Halo SweetDelights, saya berminat untuk memesan produk: ${product.name} (${product.price}). Boleh minta info stok dan pilihan ukurannya?`);
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden border border-bakery-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden h-48">
+                            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            ${product.isBestseller ? `<span class="absolute top-3 left-3 bg-bakery-gold text-bakery-900 text-[10px] font-bold px-3 py-1 rounded-full shadow-md"><i class="fa-solid fa-fire mr-1"></i>Best Seller</span>` : ''}
+                            <button onclick="openModal(${product.id})" class="absolute bottom-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-bakery-800 shadow-md hover:bg-bakery-800 hover:text-white transition-colors">
+                                <i class="fa-solid fa-expand text-xs"></i>
+                            </button>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold text-bakery-accent">${product.category}</span>
+                                <div class="flex items-center text-amber-400 text-xs font-bold gap-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="text-gray-700">${product.rating}</span>
+                                </div>
+                            </div>
+                            <h3 class="font-serif-title font-bold text-lg text-bakery-900 mb-1 group-hover:text-bakery-accent transition-colors cursor-pointer" onclick="openModal(${product.id})">${product.name}</h3>
+                            <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-4">${product.desc}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-gray-100 mt-2">
+                        <div>
+                            <span class="text-[10px] text-gray-400 block font-medium">Harga</span>
+                            <span class="font-bold text-bakery-900 text-base font-serif-title">${product.price}</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=${waMessage}" target="_blank" class="bg-bakery-100 hover:bg-emerald-600 hover:text-white text-bakery-800 p-2.5 rounded-xl transition-all font-semibold text-xs flex items-center gap-1.5">
+                            <i class="fa-brands fa-whatsapp text-sm text-emerald-600 group-hover:text-white"></i>
+                            <span>Pesan WA</span>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Function
+        function filterCatalog(category) {
+            // Update active tab buttons styling
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-cat') === category) {
+                    btn.className = "tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-bakery-800 text-white shadow-md transition-all";
+                } else {
+                    btn.className = "tab-btn px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap bg-white text-bakery-800 border border-bakery-200 hover:bg-bakery-100 transition-all";
+                }
+            });
+
+            if (category === 'all') {
+                renderCatalog(products);
+            } else if (category === 'bestseller') {
+                const filtered = products.filter(p => p.isBestseller);
+                renderCatalog(filtered);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderCatalog(filtered);
+            }
+        }
+
+        // Modal Functions
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('modal-img').src = product.img;
+            document.getElementById('modal-title').textContent = product.name;
+            document.getElementById('modal-category').textContent = product.category;
+            document.getElementById('modal-rating').textContent = product.rating;
+            document.getElementById('modal-desc').textContent = product.desc;
+            document.getElementById('modal-price').textContent = product.price;
+
+            const waMessage = encodeURIComponent(`Halo SweetDelights, saya tertarik membeli: ${product.name} (${product.price}). Apakah ada slot pengiriman?`);
+            document.getElementById('modal-wa-btn').href = `https://wa.me/6281234567890?text=${waMessage}`;
+
+            const modal = document.getElementById('product-modal');
+            const container = document.getElementById('modal-container');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('product-modal');
+            const container = document.getElementById('modal-container');
+            container.classList.remove('scale-100', 'opacity-100');
+            container.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        // Custom Order Calculator Logic
+        function calculatePrice() {
+            const sizePrice = parseInt(document.getElementById('calc-size').value) || 0;
+            const flavorPrice = parseInt(document.getElementById('calc-flavor').value) || 0;
+            const decorPrice = parseInt(document.getElementById('calc-decor').value) || 0;
+
+            const total = sizePrice + flavorPrice + decorPrice;
+            document.getElementById('total-price-display').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        function sendCustomOrder() {
+            const sizeSelect = document.getElementById('calc-size');
+            const sizeText = sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-label');
+
+            const flavorSelect = document.getElementById('calc-flavor');
+            const flavorText = flavorSelect.options[flavorSelect.selectedIndex].getAttribute('data-label');
+
+            const decorSelect = document.getElementById('calc-decor');
+            const decorText = decorSelect.options[decorSelect.selectedIndex].getAttribute('data-label');
+
+            const date = document.getElementById('calc-date').value || 'Belum ditentukan';
+            const notes = document.getElementById('calc-notes').value || 'Tidak ada catatan';
+            const totalPrice = document.getElementById('total-price-display').textContent;
+
+            const waText = `Halo SweetDelights, saya ingin memesan *Custom Cake* dengan rincian kalkulator berikut:\n\n` +
+                `🎂 *Ukuran*: ${sizeText}\n` +
+                `🍰 *Rasa Base*: ${flavorText}\n` +
+                `🎨 *Dekorasi*: ${decorText}\n` +
+                `📅 *Tanggal Acara*: ${date}\n` +
+                `📝 *Catatan Tulisan*: ${notes}\n\n` +
+                `💵 *Estimasi Total*: ${totalPrice}\n\n` +
+                `Mohon dikonfirmasi ketersediaan slotnya ya!`;
+
+            window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(waText)}`, '_blank');
+        }
+
+        // FAQ Toggle Logic
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize on load
+        window.onload = function() {
+            renderCatalog(products);
+            calculatePrice();
+
+            // Default min date for custom order (tomorrow)
+            const today = new Date();
+            today.setDate(today.getDate() + 1);
+            document.getElementById('calc-date').min = today.toISOString().split('T')[0];
+        };
+    </script>
+</body>
+</html>
